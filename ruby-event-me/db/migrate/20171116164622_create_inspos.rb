@@ -1,6 +1,7 @@
 class CreateInspos < ActiveRecord::Migration[5.1]
   def change
     create_table :inspos do |t|
+      t.bigint :friend_id
       t.string :image
 
       t.timestamps

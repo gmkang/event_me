@@ -10,6 +10,12 @@
   <%= image_tag result[:image] %>
   <%= form_for :inspo, url: inspos_path do |f| %>
     <%= f.hidden_field :image, value: result[:image] %>
+
+<%= f.select(:friend_id) do %>
+  <% Friend.all.each do |c| -%>
+    <%= content_tag(:option, c.name, value: c.id) %>
+  <% end %>
+<% end %>
     <%= f.submit "Save Image" %>
   <% end %>
 </div>

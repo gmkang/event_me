@@ -2962,3 +2962,2395 @@ Processing by InsposController#results as HTML
 Completed 200 OK in 1822ms (Views: 469.0ms | ActiveRecord: 9.5ms)
 
 
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 11:14:20 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (18.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 596ms (Views: 488.9ms | ActiveRecord: 50.8ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 11:14:26 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.9ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/inspo.rb:4:in `<class:Inspo>'
+app/models/inspo.rb:1:in `<top (required)>'
+app/controllers/inspos_controller.rb:9:in `index'
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 11:14:52 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  Rendered inspos/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/views/inspos/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/inspos/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 11:15:17 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (21.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 149ms (Views: 114.4ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 11:15:20 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 64ms (Views: 56.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 11:15:23 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/P1Q85dC1Sqw4K1ER7lHz9ptHLl1jQg05OZY0Itf56ozXJDgY1Du2Ov0GyTgZZVLBaRWXALRpu2+FyYlh5MMWA==", "search"=>{"term"=>"cake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  Rendered inspos/results.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 1706ms (Views: 37.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:15:34 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mT6OGu4XjPi9L6zd5uFA/Cn/L8GNR84eELB+NcvGTNnQ84t4PYrrY0Ne6kw85sHekamu9P8fueD4vjuLCe27WQ==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1498049281100-cb3c002220f5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=237ca599fbbe5f66a9951ce3a55f9b2a"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 28ms (ActiveRecord: 10.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (13.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 11:28:51 -0500
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 566ms (Views: 507.1ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 11:28:56 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XdK81YiXnIh9KZJsmoEtH0K5iYJjzDuRlEykCs/oo88UH7m3Wwr7E4NY1P1Ahqw9+u8ItxGUTG98QuG0DcNUTw==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (57.0ms)
+Completed 500 Internal Server Error in 508ms (ActiveRecord: 14.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for [["Gina Kang", 2], ["Harry Potter", 3], ["Matthew Kim", 1]]:Array):
+    10:   <%= image_tag result[:image] %>
+    11:   <%= form_for :inspo, url: inspos_path do |f| %>
+    12:     <%= f.hidden_field :image, value: result[:image] %>
+    13:    <%= f.select("image", "friend_id", Friend.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+    14:     <%= f.submit "Save Image" %>
+    15:   <% end %>
+    16: </div>
+  
+app/views/inspos/results.html.erb:13:in `block (2 levels) in _app_views_inspos_results_html_erb___3977093447030123563_70206421214360'
+app/views/inspos/results.html.erb:11:in `block in _app_views_inspos_results_html_erb___3977093447030123563_70206421214360'
+app/views/inspos/results.html.erb:8:in `each'
+app/views/inspos/results.html.erb:8:in `_app_views_inspos_results_html_erb___3977093447030123563_70206421214360'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 11:32:42 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XdK81YiXnIh9KZJsmoEtH0K5iYJjzDuRlEykCs/oo88UH7m3Wwr7E4NY1P1Ahqw9+u8ItxGUTG98QuG0DcNUTw==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 519ms (Views: 207.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:32:51 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZPJjyWFEQsb4J5dZGARuWg5Zz+Ft1z0lW8WTOz02NBAXszt9hh2kOWR2My+Z5Cb0G/mCvfvKwp9YVPyLt8vUA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"3"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 8.3ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'friend_id' for Inspo.):
+  
+app/controllers/inspos_controller.rb:31:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:34:28 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZPJjyWFEQsb4J5dZGARuWg5Zz+Ft1z0lW8WTOz02NBAXszt9hh2kOWR2My+Z5Cb0G/mCvfvKwp9YVPyLt8vUA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"3"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 7.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'friend_id' for Inspo.):
+  
+app/controllers/inspos_controller.rb:31:in `create'
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5224694373249618540)[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropEvents (20171116163739)
+  [1m[35m (17.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171116163739"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropInspos (20171116163801)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171116163801"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5224694373249618540)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5224694373249618540)[0m
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropInspos (20171116164058)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (85.5ms)[0m  [1m[35mDROP TABLE "inspos"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171116164058"]]
+  [1m[35m (61.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5224694373249618540)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5224694373249618540)[0m
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInspos (20171116164622)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.0ms)[0m  [1m[35mCREATE TABLE "inspos" ("id" bigserial primary key, "friend_id" bigint, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171116164622"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5224694373249618540)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (8.2ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 2]]
+  [1m[35mSQL (6.4ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 2]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.3ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 3]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 3]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.3ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:55:55 -0500
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZPJjyWFEQsb4J5dZGARuWg5Zz+Ft1z0lW8WTOz02NBAXszt9hh2kOWR2My+Z5Cb0G/mCvfvKwp9YVPyLt8vUA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"3"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 78ms (ActiveRecord: 14.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:56:17 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZPJjyWFEQsb4J5dZGARuWg5Zz+Ft1z0lW8WTOz02NBAXszt9hh2kOWR2My+Z5Cb0G/mCvfvKwp9YVPyLt8vUA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"3"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 65ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=3):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 11:56:30 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 531ms (Views: 518.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 11:56:37 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (62.3ms)
+  Rendered friends/new.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 131ms (Views: 113.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2017-11-16 11:56:46 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8hKcETvdccrR/JRYHfI7ktTM/sB7+HpYe08Bf04UwFJmY0Sv69uvSZRhdKO91Y2RyculW+qeb/3PVkdM8JeljA==", "friend"=>{"name"=>"gina", "dob"=>"03/13/1991", "notes"=>"hi"}, "commit"=>"Create Friend"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (25.7ms)[0m  [1m[32mINSERT INTO "friends" ("name", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gina"], ["notes", "hi"], ["created_at", "2017-11-16 16:56:46.364992"], ["updated_at", "2017-11-16 16:56:46.364992"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends/4
+Completed 302 Found in 52ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/friends/4" for 127.0.0.1 at 2017-11-16 11:56:46 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 43ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/friends/4/edit" for 127.0.0.1 at 2017-11-16 11:56:49 -0500
+Processing by FriendsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering friends/edit.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (6.5ms)
+  Rendered friends/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 58ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/friends/4" for 127.0.0.1 at 2017-11-16 11:56:54 -0500
+Processing by FriendsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fK7Fsa1LjwsecPUEZLFixYTYt1KDIh4uogVSdB5V0mBSjt252X3tRGLS2ZYIHcC029+Rh13bOnQQngUtulsDeA==", "friend"=>{"name"=>"gina", "dob"=>"", "notes"=>"hi"}, "commit"=>"Update Friend", "id"=>"4"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends/4
+Completed 302 Found in 16ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/friends/4" for 127.0.0.1 at 2017-11-16 11:56:54 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 122ms (Views: 116.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 11:56:57 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 38.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 11:56:58 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d4cklyOHzJ8huxPVHcgJBqOY0lgoq5w5tO03OdyNdJe4JuSE15X3bXqvpbW6FNuCfFGYvV/3MuDuHEnM0EGfZQ==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 1403ms (Views: 57.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:57:02 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fTXtd5iIaHN71+C7c+Yr2KZvcgLSevKI6+ZDteN9PH00+OgVSxUP6IWmpiqp4ar6HjnzN6AihXYD6AYLIVbL/Q==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"4"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 4], ["image", "https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8"], ["created_at", "2017-11-16 16:57:02.592622"], ["updated_at", "2017-11-16 16:57:02.592622"]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 18ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 11:57:02 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 11:57:05 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 89ms (Views: 78.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 11:57:29 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 204ms (Views: 163.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 11:57:31 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y7liYK+i6skPNO0tWFfGHeWMahEuGPntEUroeWmaYm+sGKJzW7DRO1QgW03/ixSZOkUg9FlEVzRLu5aMZVaJnQ==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (88.5ms)
+Completed 200 OK in 717ms (Views: 112.8ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 11:57:34 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4TA/BCSaUI3uBuFLAtDyaabVKMzJOrggwjvo5nYhnyeo/Tpm9wc3FhB3p9rY13NLHoOp+btiz94qNa1YtApopw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1481130797134-0c0b917e6caa?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=5a8d1cc64ac9d933a98b42cb36216b7d", "friend_id"=>"4"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (1.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 4]]
+  [1m[35mSQL (5.8ms)[0m  [1m[31mDELETE FROM "inspos" WHERE "inspos"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 4]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "friends" ("name", "dob", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Matthew Kim"], ["dob", "1989-01-23"], ["notes", "Enjoys sour cherry pie and juicy steak dinners."], ["created_at", "2017-11-16 17:02:27.281157"], ["updated_at", "2017-11-16 17:02:27.281157"]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "friends" ("name", "dob", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gina Kang"], ["dob", "1991-01-13"], ["notes", "Loves dessert and accessories."], ["created_at", "2017-11-16 17:02:27.302743"], ["updated_at", "2017-11-16 17:02:27.302743"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:03:00 -0500
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 589ms (Views: 524.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:03:11 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 139ms (Views: 83.7ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:03:16 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (58.5ms)
+  Rendered friends/new.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 155ms (Views: 143.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2017-11-16 12:03:48 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mcve9htFHKB99CvxckpyHdEP7axsQ+hdQW4b7MJjtwGlugZIy0PCIzhpywrSbcQezAi2N/0l/fj1d13ffODS3w==", "friend"=>{"name"=>"Cat Bae", "dob"=>"12/07/1989", "notes"=>"loves cats and snowboarding"}, "commit"=>"Create Friend"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "friends" ("name", "dob", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cat Bae"], ["dob", "1989-07-12"], ["notes", "loves cats and snowboarding"], ["created_at", "2017-11-16 17:03:48.199040"], ["updated_at", "2017-11-16 17:03:48.199040"]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends/7
+Completed 302 Found in 21ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 12:03:48 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 109ms (Views: 96.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:03:51 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 54ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:03:53 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ee9yfzSrzzmuhLTqdI3WXhC6T/w9WsNOoR6XitfnDrW2TrJswLn0y/WQAorTUQTaz3MFGUoGbZf77+l/2yvlRw==", "search"=>{"term"=>"cat"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 505ms (Views: 90.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:03:59 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VScMjhEjG8xR9rPuD9hbV/LbUcxxCB1IASAjfwWTGq8mZlQ69nr9M82nF5iOOBP553sckOcV4vICsUzPj276g==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 41ms (ActiveRecord: 9.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:09:13 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VScMjhEjG8xR9rPuD9hbV/LbUcxxCB1IASAjfwWTGq8mZlQ69nr9M82nF5iOOBP553sckOcV4vICsUzPj276g==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (18.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 440ms (ActiveRecord: 213.8ms)
+
+
+  
+NoMethodError (undefined method `set_friend' for #<InsposController:0x007fc531b05d80>
+Did you mean?  set_trace_func):
+  
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:12:18 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VScMjhEjG8xR9rPuD9hbV/LbUcxxCB1IASAjfwWTGq8mZlQ69nr9M82nF5iOOBP553sckOcV4vICsUzPj276g==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 89ms (ActiveRecord: 10.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:12:28 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (6.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 150ms (Views: 135.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 12:12:31 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 94ms (Views: 85.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 12:13:57 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 162ms (Views: 135.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:14:02 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 73ms (Views: 65.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:14:04 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H4/6LyclQMz3qLjaRGoPLOknQxU9yawlTsnDjDHj/lnQLjo80zd7Pqy8Drrjtt2oNu4J8EqVAvwUOL15PS8Vqw==", "search"=>{"term"=>"cat"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 1862ms (Views: 75.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:14:10 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JE+rIbKZTVOniT/M4U2eNd62R1o8UfBNGoOJ9v+l1qNtgq5DYQQqyFn4eV07Sh8XZuDGb04Jh7PyjcxIPY4hIw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:15:56 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JE+rIbKZTVOniT/M4U2eNd62R1o8UfBNGoOJ9v+l1qNtgq5DYQQqyFn4eV07Sh8XZuDGb04Jh7PyjcxIPY4hIw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 93ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:16:02 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 114ms (Views: 103.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:16:04 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:16:06 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 52.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:16:08 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6dACTBUNcNiudNzWs/aPOTH/Gwwt8SQpvV0ByzhNAc8mccJf4R9LKvVgarYUKl297jZR6VqtivDnrH8+NIHqPQ==", "search"=>{"term"=>"cupcake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 6291ms (Views: 58.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:16:21 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7oYIcjDxPPfuEdGYNsJmIN4t3Et6YrX542oKvGNqgg+nSw0Q42xbbBBglwnsxecCZntdfgg6wgcLZE8CoUF1jw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1448131063153-f1e240f98a72?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=cdeb9af979fa96d1fbe7624d0e5063ef", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:20:54 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 258ms (Views: 223.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:20:56 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 66ms (Views: 53.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:22:12 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  Rendered friends/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/views/friends/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/friends/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:22:21 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 173ms (Views: 168.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:22:59 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (63.7ms)
+  Rendered friends/new.html.erb within layouts/application (80.8ms)
+Completed 200 OK in 327ms (Views: 295.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:23:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inspos"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:23:09 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (2.4ms)
+  Rendered friends/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 54ms (Views: 42.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:23:11 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:23:17 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"77eftLwpI+Z67nM8T8E1QBVDgKRmar7MTuMZMudYGkUgFl+nSDsYFCH6xVzoHefEyorKQRE2EBUUEmfH65Txtw==", "search"=>{"term"=>"party"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (1.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 696ms (Views: 50.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:23:30 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H3YYvqi+42zLZd3ncdh0R9uAOyEr/TWVYTBnbETixSVWux3ceyOE9zUUm3ar3/VlY9a6FFmlQmuJPiLShskypQ==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=22b9772a3714af1899e2530341ce2c1f", "friend_id"=>"5"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:23:37 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 104ms (Views: 94.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:27:32 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 209ms (Views: 143.0ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:27:36 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MCFkEik6Fos/vwDvuyUomu/EbxRRe+UgjGlhr5Up/oR57GFw+qdxEMHORn5hIqm4V5LuISMjkt5kZyQRVwIJBA==", "search"=>{"term"=>"cake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 1125ms (Views: 85.9ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:27:42 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x5qwZ+ztupBBn1FCLbMMG265J5/jbGDG2BDKCAqrm0KOV7UFP3DdC7/uF9P3tI051u+mqpE0FzgwHo+2yIBswg==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e87de7cacbf11c6900fae4db28518a5f", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 49ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:28:37 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x5qwZ+ztupBBn1FCLbMMG265J5/jbGDG2BDKCAqrm0KOV7UFP3DdC7/uF9P3tI051u+mqpE0FzgwHo+2yIBswg==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e87de7cacbf11c6900fae4db28518a5f", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (23.7ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 6], ["image", "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e87de7cacbf11c6900fae4db28518a5f"], ["created_at", "2017-11-16 17:28:37.801209"], ["updated_at", "2017-11-16 17:28:37.801209"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 221ms (ActiveRecord: 40.2ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:28:37 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 122ms (Views: 115.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:28:40 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+vEWa0v6T8udgUlhQIbYH4b5S/S+PRa5klf4M0MnqlWzPBMJmGcoUGPwD/CagVk9Pq/KwcxlYUd6Wb2NgQxd1Q==", "search"=>{"term"=>"cake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 331ms (Views: 54.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:28:46 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pbMojvWK8EboEk1h5+WFuA+OVkby7DgJ/s6nDYrxibfsfi3sJheX3RZjC/A94gSat9jXc4C0T/cWwOKzSNp+Nw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=c58d5b2caf85f479cd7f7e6e3baca2cd", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (6.9ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 6], ["image", "https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=c58d5b2caf85f479cd7f7e6e3baca2cd"], ["created_at", "2017-11-16 17:28:46.154036"], ["updated_at", "2017-11-16 17:28:46.154036"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 33ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:28:46 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 47ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:28:49 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 71ms (Views: 60.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:28:50 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 107ms (Views: 100.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:29:29 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 212ms (Views: 142.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:29:31 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 65ms (Views: 59.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:29:33 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l2RtAib45hAd0IW0iC0CenXf4+Bm37wxErRYh2Ht5WtYxa0R0urd4kbEM9Qv8dD+qhapBRGDEuhIRSZybSEOmQ==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 718ms (Views: 58.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:29:39 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4WlIIk5LCjx4CjaJwOS3+0Lko+ugb9MgUAO0epXwCb+opE1AndZtp4Z7cBga4zbZ+rIi3tI3pN64DfHEV9v+Pw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1499639074945-fd03f7b1a09e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=c858400fac4ef11be41af5a127b9be09", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 6], ["image", "https://images.unsplash.com/photo-1499639074945-fd03f7b1a09e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=c858400fac4ef11be41af5a127b9be09"], ["created_at", "2017-11-16 17:29:40.068280"], ["updated_at", "2017-11-16 17:29:40.068280"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 110ms (ActiveRecord: 23.8ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:29:40 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 90ms (Views: 77.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:29:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inspos"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:29:49 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:31:43 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 212ms (Views: 175.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:31:46 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (17.5ms)
+  Rendered friends/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 95ms (Views: 74.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:31:47 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (1.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 145ms (Views: 118.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:31:48 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:             <h2><%= @friend.name %></h2>
+     6:             <h4><%= @friend.dob %></h4>
+     7:             <p><%= @friend.notes %></p>
+     8:             <% @inspos.each do |inspo| %>
+     9:     <div>
+    10:     <%= image_tag inspo.image %>
+    11:     </div>
+  
+app/views/friends/show.html.erb:8:in `_app_views_friends_show_html_erb__3540604399089538133_70242464508440'
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:32:22 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/views/friends/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/friends/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:33:12 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:             <h2><%= @friend.name %></h2>
+     6:             <h4><%= @friend.dob %></h4>
+     7:             <p><%= @friend.notes %></p>
+     8:             <% @inspos.each do |inspo| %>
+     9:     <div>
+    10:     <%= image_tag inspo.image %>
+    11:     </div>
+  
+app/views/friends/show.html.erb:8:in `_app_views_friends_show_html_erb__3540604399089538133_70242459721960'
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:34:05 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 214ms (Views: 178.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:34:09 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 84ms (Views: 71.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:34:11 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (10.5ms)
+  Rendered friends/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 76ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:34:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inspos"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 12:34:15 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (2.4ms)
+  Rendered friends/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:34:16 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 56ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:34:27 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 143ms (Views: 90.8ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:34:29 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (1.1ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (443.7ms)
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 10.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fc5322952a8>:0x007fc537bb4a78>):
+     7: 
+     8: 
+     9: 	<div class="input-group">
+    10:       <%= f.label :friend %>
+    11:       <%= f.select(:friend_id) do %>
+    12:       <% @friends.each do |friend| %>
+    13:       <%= content_tag(:option, friend.name, value: friend.id) %>
+  
+app/views/inspos/index.html.erb:10:in `block in _app_views_inspos_index_html_erb__23946044531267520_70242510154800'
+app/views/inspos/index.html.erb:3:in `_app_views_inspos_index_html_erb__23946044531267520_70242510154800'
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:34:50 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.9ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (451.2ms)
+Completed 500 Internal Server Error in 522ms (ActiveRecord: 8.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fc5322952a8>:0x007fc53883e820>):
+     7: 
+     8: 
+     9: 	<!-- <div class="input-group">
+    10:       <%= f.label :friend %>
+    11:       <%= f.select(:friend_id) do %>
+    12:       <% @friends.each do |friend| %>
+    13:       <%= content_tag(:option, friend.name, value: friend.id) %>
+  
+app/views/inspos/index.html.erb:10:in `block in _app_views_inspos_index_html_erb__23946044531267520_70242516728140'
+app/views/inspos/index.html.erb:3:in `_app_views_inspos_index_html_erb__23946044531267520_70242516728140'
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:35:02 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.7ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 93ms (Views: 85.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:35:09 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 83ms (Views: 51.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:35:47 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 267ms (Views: 235.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:35:51 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 114ms (Views: 98.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:35:59 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 121ms (Views: 111.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 12:36:01 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6kyoySWkz+nDdt1qZ8X7ySVyOanreJb63AwntjxFm5Ml7Wja0bb0G5hiawrAGSlN+rtzTJwkOCOG/VlDMIlwYQ==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 277ms (Views: 47.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 12:36:06 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CHPgwZic8EW/nBRTAaxC6bdctnYmam2mU0FtakvB0/xBvuWjSwGX3kHtUsLbq8PLDwo3Q1QyGli7TyjUieokfA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 6], ["image", "https://images.unsplash.com/photo-1460380410874-537ecece3984?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae7c2fa64a5b67b8527c700a3e5e99c8"], ["created_at", "2017-11-16 17:36:06.252948"], ["updated_at", "2017-11-16 17:36:06.252948"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 20ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 12:36:06 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 12:36:10 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 12:36:11 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 12:37:10 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.9ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 205ms (Views: 138.5ms | ActiveRecord: 19.7ms)
+
+
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT  "inspos".* FROM "inspos" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:02:54 -0500
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.9ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 542ms (Views: 478.2ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:02:58 -0500
+  
+SyntaxError (/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/controllers/friends_controller.rb:12: syntax error, unexpected '=', expecting ')'
+pos = Inspo.where(:friend_id = friend_id)
+                              ^
+/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/controllers/friends_controller.rb:73: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/friends_controller.rb:12: syntax error, unexpected '=', expecting ')'
+app/controllers/friends_controller.rb:73: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:03:26 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 256ms (Views: 154.7ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:03:28 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 23ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/friends_controller.rb:11:in `show'
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:03:53 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 77ms (ActiveRecord: 13.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=friend_id):
+  
+app/controllers/friends_controller.rb:11:in `show'
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:04:10 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 89ms (ActiveRecord: 18.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=id):
+  
+app/controllers/friends_controller.rb:11:in `show'
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:04:19 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 152ms (Views: 97.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 13:04:28 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (78.8ms)
+  Rendered friends/new.html.erb within layouts/application (88.5ms)
+Completed 200 OK in 198ms (Views: 191.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:04:29 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 63ms (Views: 58.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:04:30 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 53.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:04:32 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:04:37 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpHzp0tgLIYuV3j/iTZuJDZ/jUnWznFZKspHUaSyDlEJMDO0v3IXdHVDzp8u6ryg6bbHrKGS34BwOzmkqH7low==", "search"=>{"term"=>"food"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 1643ms (Views: 53.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:04:43 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJAfy6R+zMH0fq7cKxsUsGBeJgVtmYfbtPkaH/VOOvONXRqpd+OrWgoP6E3xHJWS2AinMB/B8CVc91+hN2XNcw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=386fc28e439ae554b5559eed63187bae", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 18ms (ActiveRecord: 5.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:05:01 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJAfy6R+zMH0fq7cKxsUsGBeJgVtmYfbtPkaH/VOOvONXRqpd+OrWgoP6E3xHJWS2AinMB/B8CVc91+hN2XNcw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=386fc28e439ae554b5559eed63187bae", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 88ms (ActiveRecord: 13.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:32:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:11:01 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJAfy6R+zMH0fq7cKxsUsGBeJgVtmYfbtPkaH/VOOvONXRqpd+OrWgoP6E3xHJWS2AinMB/B8CVc91+hN2XNcw==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=386fc28e439ae554b5559eed63187bae", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 80ms (ActiveRecord: 15.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:33:in `create'
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:12:58 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 187ms (Views: 130.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:13:13 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (1.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 56ms (Views: 48.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:13:15 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:13:19 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hy9wVTHfAtILPeuL7g8utI5TfUkBzs6m0T+OlzRl5BHQjrBGxc05IFApXetJ0/wwUZo3rHaSYH+LzvBiOKkP4w==", "search"=>{"term"=>"cat"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 284ms (Views: 63.1ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:13:25 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dXQa1k6iELXjeQkrCyRLC6CBOrOTopw3RY02oM0RMsA8uR+0nT93Lh0IT7rRI8opGNe7huH668mtg3MeDzrFQA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:33:in `create'
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:14:23 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 207ms (Views: 149.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:14:27 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 51.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:14:31 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DW+iI1YY9w1EU4UL8pQn+nFVlaOSb52+oChJtkHe5mrCzmIwogrM/x9HM2tVSPV+rpzfRuUzM2f62TdDTRINmA==", "search"=>{"term"=>"cat"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 309ms (Views: 108.2ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:14:34 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mfpjznb86qnM3FF7uCnjQZJUvp17miuk8L31bt72a7F4N2aspWGNMjKtF+piLmJjKgI/qAnCXFoYs7DQHN2cMQ==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Friend with 'id'=):
+  
+app/controllers/inspos_controller.rb:31:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:15:28 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mfpjznb86qnM3FF7uCnjQZJUvp17miuk8L31bt72a7F4N2aspWGNMjKtF+piLmJjKgI/qAnCXFoYs7DQHN2cMQ==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mInspo Load (0.2ms)[0m  [1m[34mSELECT  "inspos".* FROM "inspos" WHERE "inspos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 10.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Inspo with 'id'=):
+  
+app/controllers/inspos_controller.rb:31:in `create'
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:16:16 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mfpjznb86qnM3FF7uCnjQZJUvp17miuk8L31bt72a7F4N2aspWGNMjKtF+piLmJjKgI/qAnCXFoYs7DQHN2cMQ==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 7], ["image", "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005"], ["created_at", "2017-11-16 18:16:17.154902"], ["updated_at", "2017-11-16 18:16:17.154902"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 291ms (ActiveRecord: 48.5ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:16:17 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 126ms (Views: 120.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:16:25 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LTn/lE+TY5LylqWN3icI6oGv6Gud6/4N7L8TObN5hCtk9Pr2nA4ECQzn4xwEIInIOflpXu+zifMEsVaHcVJzqw==", "search"=>{"term"=>"cat"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 411ms (Views: 149.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:16:28 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVezbfP3rVJXuf6xWoCblo6V3XncOV4BUAh2M8TN43LUmrYPIGrKyanIuCCAhxq0NsNcTK5hKf+4BjONBuYU8g==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005", "friend_id"=>"7"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 7], ["image", "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=e5dc6578c4ade495f0007a0e54dfb005"], ["created_at", "2017-11-16 18:16:28.974521"], ["updated_at", "2017-11-16 18:16:28.974521"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 17ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:16:28 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:16:31 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.3ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 40.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:16:52 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 114ms (Views: 104.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:16:54 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 40.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:18:10 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 144ms (Views: 129.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:18:19 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 152ms (Views: 106.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:18:20 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 64ms (Views: 53.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:19:21 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.7ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 212ms (Views: 135.1ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:20:16 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 18.4ms)
+
+
+  
+ArgumentError (Unsupported argument type: true (TrueClass)):
+  
+app/controllers/friends_controller.rb:12:in `show'
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:24:13 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.3ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 270ms (Views: 146.9ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:42:30 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 208ms (Views: 181.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:42:40 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yCYmsFnKZuxOvz2MK8j+BgKv2bkuNLTrIolZ+22+0ywHh+ajrdhdHhWri+yMFCyC3WaTXFloGjJ4eCcOYXI43g==", "search"=>{"term"=>"pie"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 1780ms (Views: 119.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:42:49 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xodnblpL52jb+KDfIMJ2TgTk48ugnhiIYpP2FReiicKPSmIMidaA8yWJ5k76xfdsvLJi/tLGb3aKnbOr1Yl+Qg==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1509461399763-ae67a981b254?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=28f7b0315b076bb4312579d831dcb3aa", "friend_id"=>"5"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 5], ["image", "https://images.unsplash.com/photo-1509461399763-ae67a981b254?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=28f7b0315b076bb4312579d831dcb3aa"], ["created_at", "2017-11-16 18:42:49.153253"], ["updated_at", "2017-11-16 18:42:49.153253"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 109ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:42:49 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 189ms (Views: 180.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:42:52 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 78ms (Views: 63.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:42:53 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.7ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 144ms (Views: 134.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:43:00 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 141ms (Views: 134.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:43:01 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 99ms (Views: 90.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:43:50 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 173ms (Views: 101.4ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:43:54 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:43:55 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 64ms (Views: 57.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:43:59 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 65ms (Views: 56.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:43:59 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 76ms (Views: 63.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 13:44:25 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 216ms (Views: 122.1ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:44:28 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 80ms (Views: 69.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:44:29 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.1ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 93ms (Views: 81.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:44:38 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered friends/show.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 360ms (Views: 209.2ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:46:55 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 193ms (Views: 170.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-16 13:46:58 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qER/4A74I5jQ2MO8kG5yRIvYS0oswevFVw0pogkZxYRANHsdCnbfDhX1W5VnWtNzeYryF/vqXZPrUpThOiM5A==", "search"=>{"term"=>"dog"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/results.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  [1m[36mCACHE Friend Load (0.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered inspos/results.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 330ms (Views: 59.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/inspos" for 127.0.0.1 at 2017-11-16 13:49:28 -0500
+Processing by InsposController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V8950YJk+MySI98TzjmYEiL5sLdTVHzhdDJ93j7COEQeAnyzUfmfV2xSmYIUPhkwmq8xgiEMCx+cPDhg/OnPxA==", "inspo"=>{"image"=>"https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=f1721558c5727439760adc2606570da4", "friend_id"=>"6"}, "commit"=>"Save Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "inspos" ("friend_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["friend_id", 6], ["image", "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=f1721558c5727439760adc2606570da4"], ["created_at", "2017-11-16 18:49:28.641787"], ["updated_at", "2017-11-16 18:49:28.641787"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/inspos/search
+Completed 302 Found in 125ms (ActiveRecord: 27.7ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 13:49:28 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 142ms (Views: 131.4ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT  "inspos".* FROM "inspos" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-11-16 13:51:20 -0500
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 516ms (Views: 452.1ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:51:24 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT  "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 16.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:             <h2><%= @friend.name %></h2>
+     6:             <h4><%= @friend.dob %></h4>
+     7:             <p><%= @friend.notes %></p>
+     8:             <% @inspos.each do |inspo| %>
+     9:     <div>
+    10:     <%= image_tag inspo.image %>
+    11:     </div>
+  
+app/views/friends/show.html.erb:8:in `_app_views_friends_show_html_erb___1015959793843746871_70093133573460'
+Started GET "/" for 127.0.0.1 at 2017-11-16 13:51:26 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:51:29 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mInspo Load (0.5ms)[0m  [1m[34mSELECT  "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  Rendered friends/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:             <h2><%= @friend.name %></h2>
+     6:             <h4><%= @friend.dob %></h4>
+     7:             <p><%= @friend.notes %></p>
+     8:             <% @inspos.each do |inspo| %>
+     9:     <div>
+    10:     <%= image_tag inspo.image %>
+    11:     </div>
+  
+app/views/friends/show.html.erb:8:in `_app_views_friends_show_html_erb___1015959793843746871_70093132569560'
+Started GET "/" for 127.0.0.1 at 2017-11-16 13:51:34 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (1.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 27.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:52:33 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.7ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 203ms (Views: 119.8ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:52:35 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 62ms (Views: 53.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:52:36 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" IS NULL[0m
+  Rendered friends/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 82ms (Views: 75.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:52:38 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (1.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 100ms (Views: 91.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/friends/5" for 127.0.0.1 at 2017-11-16 13:53:20 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 5]]
+  Rendered friends/show.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 236ms (Views: 140.0ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:53:22 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (2.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 74ms (Views: 62.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:53:23 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.8ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 6]]
+  Rendered friends/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 92ms (Views: 82.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:54:46 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 6]]
+  Rendered friends/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 222ms (Views: 150.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/friends/6" for 127.0.0.1 at 2017-11-16 13:55:21 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (1.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 6]]
+  Rendered friends/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 126ms (Views: 113.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 13:55:23 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.7ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 49.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 13:55:30 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 140ms (Views: 100.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-16 14:18:39 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (257.8ms)
+Completed 200 OK in 420ms (Views: 400.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-11-16 14:18:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zydqcjf9wuLSz8BEp7TlnpOHG/4imMlDCO1otFk7clcu6m8Q5GCleSy+htV9s2S8K9Gay1DAvr3g4y0KmxCF1w==", "session"=>{"email"=>"gina@yo.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (24.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gina@yo.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 343ms (ActiveRecord: 178.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-11-16 14:18:52 -0500
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 121ms (Views: 101.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 14:19:59 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (6.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 268ms (Views: 208.5ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 14:20:03 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (37.2ms)
+  Rendered friends/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 134ms (Views: 116.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 14:20:03 -0500
+  
+SyntaxError (/Users/matthewkim/GINA_WDI/projects/project5/event_me/ruby-event-me/app/controllers/inspos_controller.rb:14: syntax error, unexpected tCONSTANT, expecting keyword_end
+#{@term}&client_id=ENV["APP_ID"]"
+                              ^):
+  
+app/controllers/inspos_controller.rb:14: syntax error, unexpected tCONSTANT, expecting keyword_end
+Started GET "/inspos" for 127.0.0.1 at 2017-11-16 14:23:39 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 234ms (Views: 148.3ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-16 14:23:44 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 116ms (Views: 96.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-16 14:23:47 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (4.0ms)
+  Rendered friends/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 91ms (Views: 48.4ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 14:23:48 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 76ms (Views: 60.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/friends/7" for 127.0.0.1 at 2017-11-16 14:23:49 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.9ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 7]]
+  Rendered friends/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 45ms (Views: 36.0ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/friends/7" for 127.0.0.1 at 2017-11-16 14:23:52 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EsNqPXiqYGyN430+n4vns9SMQlkgHai3q+aAzUqFt2CtkgzY9hHH9GHJtMTV6k+i3HKg5NHBzYtdFIBYLactPg==", "id"=>"7"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFriend Load (6.8ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 7]]
+  [1m[35mSQL (38.0ms)[0m  [1m[31mDELETE FROM "inspos" WHERE "inspos"."id" = $1[0m  [["id", 6]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "inspos" WHERE "inspos"."id" = $1[0m  [["id", 7]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 7]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 238ms (ActiveRecord: 77.6ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-16 14:23:52 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+

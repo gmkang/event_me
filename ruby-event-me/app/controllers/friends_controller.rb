@@ -8,6 +8,7 @@ class FriendsController < ApplicationController
 	end
 
 	def show
+		@inspos = Inspo.where(friend_id: params[:id])
 	end
 
 	def new
@@ -37,11 +38,8 @@ class FriendsController < ApplicationController
 	end
 
 	def destroy
-		if @friend.destroy
+		 @friend.destroy
 			redirect_to friends_path
-		else
-			redirect_back
-		end
 	end
 
 

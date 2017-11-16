@@ -9,6 +9,6 @@
 Friend.destroy_all
 
 Friend.create([
-{ name: 'Matthew Kim', dob: DateTime.strftime("12/23/1989", "%B #{day_format}, %Y"), notes: 'Enjoys sour cherry pie and juicy steak dinners.'},
-{ name: 'Gina Kang', dob: DateTime.strftime("03/13/1991", "%B #{day_format}, %Y"), notes: 'Loves dessert and accessories.'}
+{ name: 'Matthew Kim', dob: Date.strptime("12/23/1989", "%M/%d/%Y"), notes: 'Enjoys sour cherry pie and juicy steak dinners.'},
+{ name: 'Gina Kang', dob: Date.strptime("03/13/1991", "%M/%d/%Y"), notes: 'Loves dessert and accessories.'}
 ])

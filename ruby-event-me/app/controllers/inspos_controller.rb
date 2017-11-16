@@ -1,5 +1,7 @@
 class InsposController < ApplicationController
-before_action :logged_in, only: [:index, :search, :results, :create]
+	before_action :require_user
+	before_action :logged_in, only: [:index, :search, :results, :create]
+	
 	def search
 	end
 
@@ -20,18 +22,25 @@ before_action :logged_in, only: [:index, :search, :results, :create]
 	end
 end
 
-	def create
-		@inspo = Inspo.new(inspo_params)
-		if @inspo.save
-			redirect_to inspos_path
-		else
-			redirect_to search_inspos_path
-		end
+	def new
+		@friends = Friend.all
 	end
+
+
+	def create
+		friend_id = params[:friend_id]
+		puts friend_id
+		@inspo = Inspo.new(inspo_params)
+	
+		unless @inspo.save
+			flash[:inspo] = @inspo.errors.messages
+    end
+    redirect_back fallback_location: @friend
+  end
 
 	private
 
 	def inspo_params
-		params.require(:inspo).permit(:image)
+		params.require(:inspo).permit(:image, :friend_id)
 	end
 end

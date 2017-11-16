@@ -7,7 +7,7 @@ end
 
 gem 'httparty'
 
-gem 'twilio-ruby', '~> 5.4.5'
+gem 'twilio-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
