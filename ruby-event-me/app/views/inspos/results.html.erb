@@ -1,0 +1,16 @@
+<h1>Inspo Search</h1>
+
+<%= form_for :search, url: search_inspos_path do |f| %>
+  <%= f.text_field :term %>
+  <%= f.submit "search" %>
+<% end %>
+
+<% @results.each do |result| %>
+<div>
+  <%= image_tag result[:image] %>
+  <%= form_for :inspo, url: inspos_path do |f| %>
+    <%= f.hidden_field :image, value: result[:image] %>
+    <%= f.submit "Save Image" %>
+  <% end %>
+</div>
+<% end %>

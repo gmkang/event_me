@@ -1,0 +1,6 @@
+<h1>Search for Inspo </h1>
+
+<%= form_for :search, url: search_inspos_path do |f| %>
+	<%= f.text_field :term %>
+	<%= f.submit "Search Images" %>
+	<% end %>

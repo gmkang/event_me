@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventMe</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<nav>
+  	<% if @logged_in %>
+    <h1>Event Me</h1>
+  		<div class="nav-links-main">
+  			<%= link_to("Archives", friends_path) %>
+  			<%= link_to("Add Friends", new_friend_path) %>
+        <%= link_to("Inspo Board", inspos_path) %>
+        <%= link_to("Get Inspired", search_inspos_path) %>
+  			<%= link_to("Logout", logout_path, :method => "delete") %>
+  		</div>
+  	<% else %>
+  	<div class="nav-header">
+  			<p id="nav-name">EVENT ME</p>
+  			<div class="nav-links">
+          <%= link_to("Log In", login_path) %><br><br><br>
+          <%= link_to("Sign Up", signup_path) %>
+         </div>
+  	</div>
+  <div class="landing"><%= image_tag "conf-gif.gif" %><%= image_tag "conf-gif.gif" %>
+		<div class="landing_text">
+		<h2 class="landing_header">Birthday Que</h2>
+   </div>
+	 <% end %>
+	</nav>
+    <%= yield %>
+  </body>
+</html>

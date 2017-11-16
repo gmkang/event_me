@@ -1,0 +1,15 @@
+<%= form_for(@friend, :html => {:class => "form"}) do |f| %>
+  <div class="input-group"> 
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="input-group">
+    <%= f.label :dob %>
+    <%= f.text_field :dob %>
+  </div>
+  <div class="input-group">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+  <%= f.submit %>
+<% end %>

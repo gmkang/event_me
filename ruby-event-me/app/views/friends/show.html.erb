@@ -1,0 +1,18 @@
+<h1 class="friend_page">Author</h1>
+<div class="show">
+    <div class="show-friend-info">
+        <div class="show-card-title">
+            <h2><%= @friend.name %></h2>
+            <h4><%= @friend.dob %></h4>
+            <p><%= @friend.notes %></p>
+        </div>
+        
+        <div class="card-footer">
+                <%= link_to("Add Friend!", new_friend_path) %></p>
+            <div class="footer-buttons">
+                <%= link_to("✎", edit_friend_path(@friend), :class => "pop-button") %>
+                <%= button_to "delete", @recipe, :method => :delete %>
+            </div>
+        </div>
+    </div>
+</div>
