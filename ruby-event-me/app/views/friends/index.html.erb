@@ -1,6 +1,6 @@
 <h1 class="main_header">Friends List</h1>
 <div class="info-list">
-	<%= @friends.each do |friend| %>
+	<% @friends.each do |friend| %>
 	<div class="friend-info">
 		<h2 class="card-title"><%= link_to(friend.name, friend) %></h2>
 			<h4 class="friend-dob"><%= friend.dob %></h4>

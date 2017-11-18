@@ -1,4 +1,4 @@
-require('bundler')
+require("bundler")
 Bundler.require()
  
 
@@ -11,11 +11,8 @@ account_sid = 'AC667493c4d3227874f16c1ab28c8ed3f3'
 
 client = Twilio::REST::Client.new(account_sid, auth_token)
 
-service = client.notify.v1.services('PN4e018df08b913a57437adc983c52dbb8')
-
-notification = service.notifications.create(
-   to_binding: '{"binding_type":"sms", "address":"+17144174462"}',
-  body: 'Knok-Knok! This is your first Notify SMS'
+@client.messages.create(
+to: "+17144174462",
+from: "+17142942124",
+body: "PLEASE TWILIO... PLEASE WORK!"
 )
-
-puts notification.sid
