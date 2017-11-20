@@ -1,0 +1,5 @@
+I"h(function() {
+  $(".a-unique-class").html('<%= j render "shared/friend_form" %>');
+
+}).call(this);
+:ET

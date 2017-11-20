@@ -1,9 +1,18 @@
-<h1> Event Board </h1>
+<div class="event-container">
+<div class="event-head">
+<h1 id="event-header"> Event Board </h1><br>
+<p>A collection of all of your inspirations in one place</p>
+</div>
+<div class="board-control">
 
 <% @inspos.each do |inspo| %>
-<div>
+<div class="board-photos">
 	<%= image_tag inspo.image %>
-	</div>
 
+
+</div>
 
 <% end %>
+</div>
+	
+</div>

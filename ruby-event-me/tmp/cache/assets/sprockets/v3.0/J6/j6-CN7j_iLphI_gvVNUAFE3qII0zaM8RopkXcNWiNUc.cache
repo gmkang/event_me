@@ -1,0 +1,5 @@
+I"b(function() {
+  $("#my-modal").html('<%= j render "shared/friend_form" %>');
+
+}).call(this);
+:ET

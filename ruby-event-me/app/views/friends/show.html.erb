@@ -1,21 +1,22 @@
 <div class="show">
     <div class="show-friend-info">
         <div class="show-card-title">
-            <h2><%= @friend.name %></h2>
+            <h2 id="name"><%= @friend.name %></h2>
             <h4><%= @friend.dob %></h4>
             <p><%= @friend.notes %></p>
             <% @inspos.each do |inspo| %>
-    <div>
+    <div class="show-image">
         <%= image_tag inspo.image %>
     </div>
 <% end %>
-        </div>
+        
         
         <div class="card-footer">
     
             <div class="footer-buttons">
-                <%= link_to("✎", edit_friend_path(@friend), :class => "pop-button") %>
-                <%= button_to "delete", @recipe, :method => :delete %>
+                <%= button_to "Edit", edit_friend_path(@friend, :class => "pop-button") %>
+                <%= button_to "Remove", @friend, :method => :delete %>
+                </div>
             </div>
         </div>
     </div>

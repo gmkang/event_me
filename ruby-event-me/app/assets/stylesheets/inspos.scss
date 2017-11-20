@@ -1,3 +1,93 @@
 // Place all the styles related to the inspos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.event-container {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.board-photos img{
+	border-radius: 12px;
+}
+
+.board-photos {
+	width: 15%;
+	margin: 2px;
+	
+}
+
+.board-control {
+	border: 1px solid black;
+	display: flex;
+	height: -webkit-fill-available;
+	overflow: scroll;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 3%;
+	margin-left: 5%;
+}
+
+.event-head {
+	display: flex;
+	align-items: center;
+	height: 55vh;
+	width: 30vw;
+	justify-content: flex-end;
+	flex-direction: column;
+	text-align: left;
+}
+
+#event-header {
+	font-family: 'Satisfy', cursive;
+}
+
+
+.search-container {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 3%;
+	text-align: center;
+}
+
+results controller {
+	height: -webkit-fill-available;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.result-images img{
+	margin: 5px;
+	border-radius: 12px;
+}
+
+.result-images input{
+	margin: 3px;
+	margin-bottom: 9%;
+	margin: 0 auto;
+}
+
+.results {
+	margin: 0 auto;
+}
+
+#search-more {
+	font-family: 'Codystar', cursive;
+	margin-bottom: 15px;
+}
+
+.search-for {
+	font-family: 'Satisfy', cursive;
+}
+
+.search-form {
+	margin-bottom: 4%;
+}

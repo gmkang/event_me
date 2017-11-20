@@ -1,12 +1,15 @@
-<h1>Inspo Search</h1>
-
+<div class="search-container">
+<div class='results-controller'>
+<div class="search-form">
+<h1 id='search-more'>Search More</h1>
+<div class="results">
 <%= form_for :search, url: search_inspos_path do |f| %>
   <%= f.text_field :term %>
   <%= f.submit "search" %>
 <% end %>
-
+</div>
 <% @results.each do |result| %>
-<div>
+<div class='result-images'>
   <%= image_tag result[:image] %>
   <%= form_for :inspo, url: inspos_path do |f| %>
     <%= f.hidden_field :image, value: result[:image] %>
@@ -20,3 +23,6 @@
   <% end %>
 </div>
 <% end %>
+</div>
+</div>
+</div>

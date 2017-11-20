@@ -5,6 +5,7 @@ Rails.application.routes.draw do
  	root "friends#index"
 
  	resources :friends
+  get "/friends/new", to: "friends#new", as: :add_new
 
  	resources :inspos, only: [:index, :create]
  	get "/inspos/search", to: "inspos#search", as: :search_inspos

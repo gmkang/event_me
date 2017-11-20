@@ -1,0 +1,5 @@
+I"a(function() {
+  $(".a-unique-class").html('<%= j render "posts/_form" %>');
+
+}).call(this);
+:ET

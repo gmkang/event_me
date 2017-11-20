@@ -1,3 +1,153 @@
 // Place all the styles related to the friends controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.info-list {
+	display: flex;
+	width: 90vw;
+	height: 95vh;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+	margin: 0 auto;
+}
+
+.friend-info {
+	width: 22vw;
+	height: 21vh;
+	background-color: #7C97B4;
+	margin-top: 10px;
+	border-radius: 12px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 7px 7px grey;
+
+};
+
+.card-title {
+	text-align: center;
+}
+
+.friend-dob {
+	margin: 2px;
+}
+
+.birthday-info {
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	width: 28vw;
+	height: 33vh;
+	border-radius: 12px;
+	box-shadow: 10px 10px 5px grey;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center
+}
+
+#birthday-container {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: center;
+	text-align: center;
+	
+}
+
+.card-title a {
+	color: white;
+	text-decoration: none;
+	border-bottom-style: 2px solid gray;
+	font-family: 'Boogaloo', cursive;
+	font-size: 33px;
+	padding: 2px;
+}
+
+.card-title a:hover {
+	color: #0e0b16;
+}
+
+#bday-highlight {
+	font-size: 18px;
+	color: gold;
+}
+
+.friend-container {
+	display: flex;
+	justify-content: space-around;
+	height: 0vh;
+}
+
+.time {
+	text-align: center;
+}
+
+.show {
+	width: 90 vw;
+	height: 90vh;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+}
+
+#name {
+	font-family: 'Boogaloo', cursive;
+	font-size: 40px;
+}
+
+.show-friend-info {
+	width: 90vw;
+	height: -webkit-fill-available;
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+
+.show-card-title {
+	width: 72vw;
+	height: 97vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	border: 2px solid #0e0b16;
+  box-shadow: 10px 10px grey;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow: scroll;
+  padding-bottom: 5px;
+}
+
+.card-footer {
+	width: 50vw;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3%;
+}
+
+
+.footer-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 5px;
+	margin-bottom: 5%;
+}
+
+.show-image img{
+	border-radius: 12px;
+	margin: 2px;
+}
+
+button {
+	margin-bottom: 5px;
+}
+
+
+
+
+
+

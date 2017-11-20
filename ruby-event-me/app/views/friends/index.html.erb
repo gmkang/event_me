@@ -1,10 +1,30 @@
-<h1 class="main_header">Friends List</h1>
+<h1 class="main_header"></h1><br>
+<p class="time"><%= Time.now.strftime("%B %d,%Y") %></p>
 <div class="info-list">
+	
 	<% @friends.each do |friend| %>
+	<% if Date.strptime('1991-03-13', '%Y-%m-%d') == friend.dob  %>
+
+
+	<div id="birthday-container">
+	<div class="birthday-info">
+
+		<h2 class="card-title"><%= link_to(friend.name, friend) %></h2>
+		<p id="bday-highlight">TODAY is <%= friend.name %>'s BIRTHDAY! Don't forget to wish them a happy birthday 🎂</p>
+			<h4 class="friend-dob"><%= friend.dob %></h4>
+			<p class="friend-note"><%= friend.notes %></p>
+	</div>
+	</div>
+
+<% else %>
+	<div class="friend-container">
 	<div class="friend-info">
 		<h2 class="card-title"><%= link_to(friend.name, friend) %></h2>
 			<h4 class="friend-dob"><%= friend.dob %></h4>
 			<p class="friend-note"><%= friend.notes %></p>
 	</div>
+	</div>
 <% end %>
+	<% end %>
 </div>
+
