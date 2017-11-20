@@ -1,12 +1,15 @@
 <h1 class="main_header"></h1><br>
 <p class="time"><%= Time.now.strftime("%B %d,%Y") %></p>
+
+<%= link_to new_friend_path, :class => "btn", "data-toggle" => "modal", "data-target" => "#myModal" do %><i class="material-icons add">add_circle</i><% end %>
 <div class="info-list">
 	
 	<% @friends.each do |friend| %>
-	<% if Date.strptime('1991-03-13', '%Y-%m-%d') == friend.dob  %>
+	<% if Date.strptime('1991-01-13', '%Y-%m-%d') == friend.dob  %>
 
 
-	<div id="birthday-container">
+	<div id="friend-container">
+	<div class="bday-controller">
 	<div class="birthday-info">
 
 		<h2 class="card-title"><%= link_to(friend.name, friend) %></h2>
@@ -15,7 +18,7 @@
 			<p class="friend-note"><%= friend.notes %></p>
 	</div>
 	</div>
-
+</div>
 <% else %>
 	<div class="friend-container">
 	<div class="friend-info">
@@ -28,3 +31,18 @@
 	<% end %>
 </div>
 
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+    </div>
+
+  </div>
+</div>

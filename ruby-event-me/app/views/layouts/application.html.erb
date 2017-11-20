@@ -16,7 +16,6 @@
     <h1 class="main-title">Event Me</h1>
   		<div class="nav-links-main">
   			<%= link_to("Friends List", friends_path) %>
-  			<%= link_to("Add Friends", new_friend_path) %>
         <%= link_to("Inspo Board", inspos_path) %>
         <%= link_to search_inspos_path, class: 'search-icon' do %>
   			Get Inspired<i class="material-icons">search</i>
@@ -27,7 +26,7 @@
     </div>
   	<% else %>
   	<div class="nav-header">
-  			<p id="nav-name">EVENT ME</p>
+  			<h3 class="main-title">EVENT ME</h3>
   			<div class="nav-links">
         <div id="log">
           <%= link_to("Log In", login_path) %>

@@ -3,7 +3,7 @@
 <div class="search-form">
 <h1 id='search-more'>Search More</h1>
 <div class="results">
-<%= form_for :search, url: search_inspos_path do |f| %>
+<%= form_for :search, url: search_inspos_path, class: 'results-form' do |f| %>
   <%= f.text_field :term %>
   <%= f.submit "search" %>
 <% end %>

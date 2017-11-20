@@ -11,7 +11,7 @@ class InsposController < ApplicationController
 
 	def results
 		@term = params[:search][:term]
-		url = "https://api.unsplash.com/search/photos/?page=10&query=#{@term}&client_id=ENV['API_KEY']"
+		url = "https://api.unsplash.com/search/photos/?page=10&query=#{@term}&client_id="
 		response = HTTParty.get(url)
 		parsed_response = JSON.parse(response.body)
 		@results = parsed_response["results"].map do |result| 

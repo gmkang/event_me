@@ -26,11 +26,11 @@ body {
 .nav-header {
 	width: 99vw;
 	height: 8vh;
-	background-color: #1C197D;
+	background-color: #433d93;
 	padding: 3px;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid #302D54;
+	border-bottom: 3px solid gray;
 -webkit-box-shadow:0px 1px 1px #de1dde;
  -moz-box-shadow:0px 1px 1px #de1dde;
  box-shadow:0px 1px 1px #de1dde;
@@ -51,7 +51,7 @@ body {
 .nav-links {
 	width: 15vw;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-direction: row;
 	align-items: flex-end;
 }
@@ -64,7 +64,7 @@ body {
 
 .landing {
 	width: 99vw;
-	height: 35vw;
+	height: 30vw;
 	background-color: #433d93;
 	text-align: center;
 }
@@ -98,14 +98,19 @@ body {
 }
 
 #log {
-	
-	padding: 5px;
+	font-family: 'Boogaloo', cursive;
+	font-size: 20px;
+	padding: 3px;
 	justify-content: space-between;
 }
 
-#sign {
-
-	padding: 5px;
+#sign a{
+	font-family: 'Boogaloo', cursive;
+	padding: 0px 20px;
+	font-size: 20px;
+	background-color: #6b6bdb;
+	border-radius: 20px;
+	line-height: 40px;
 }
 
 input {
@@ -142,4 +147,38 @@ a:hover {
 
 p {
 	font-family: 'Domine', serif;
+}
+
+select {
+	padding: 5px;
+}
+
+.enter-header {
+	font-family: 'Boogaloo', cursive;
+	font-size: 40px;
+	color: #0e0b16;
+}
+
+#session_email {
+	width: 20vw;
+}
+
+#session_password {
+	width: 20vw;
+}
+
+#user_name {
+	width: 20vw;
+}
+
+#user_email {
+	width: 20vw;
+}
+
+#user_password {
+	width: 20vw;
+}
+
+#user_password_confirmation {
+	width: 20vw;
 }

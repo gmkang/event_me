@@ -5,7 +5,4 @@ class Friend < ApplicationRecord
 	validates :dob, confirmation: true
 	validates :notes, confirmation: true
 
-
-
 end
-
