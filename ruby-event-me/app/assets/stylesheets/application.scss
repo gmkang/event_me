@@ -37,6 +37,20 @@ body {
   
 }
 
+.nav-header1 {
+	width: 99vw;
+	height: 8vh;
+	background-color: #433d93;
+	padding: 3px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid #6b6bdb;
+-webkit-box-shadow:0px 1px 1px #de1dde;
+ -moz-box-shadow:0px 1px 1px #de1dde;
+ box-shadow:0px 1px 1px #de1dde;
+  
+}
+
 .nav-links a {
 	text-decoration: none;
 	text-transform: capitalize;
@@ -71,8 +85,10 @@ body {
 
 .landing_text {
 	position: absolute;
-	margin: 0 auto;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: -30%;
+	margin-left: 38%;
 }
 
 .landing_header {
@@ -99,15 +115,15 @@ body {
 
 #log {
 	font-family: 'Boogaloo', cursive;
-	font-size: 20px;
-	padding: 3px;
+	font-size: 24px;
 	justify-content: space-between;
+	margin-bottom: 2px
 }
 
 #sign a{
 	font-family: 'Boogaloo', cursive;
-	padding: 0px 20px;
-	font-size: 20px;
+	padding: 0px 22px;
+	font-size: 24px;
 	background-color: #6b6bdb;
 	border-radius: 20px;
 	line-height: 40px;
@@ -147,6 +163,7 @@ a:hover {
 
 p {
 	font-family: 'Domine', serif;
+	font-size: 17px;
 }
 
 select {
@@ -182,3 +199,36 @@ select {
 #user_password_confirmation {
 	width: 20vw;
 }
+
+#landing-name {
+	font-family: 'Atma', cursive;
+	
+	color: white;
+	animation: fontbulger 2s infinite;
+}
+
+.landing-controller {
+	width: 50vw;
+	height: 60vh;
+}
+
+@keyframes fontbulger {
+  0% {
+    font-size: 100px;
+    color: white;
+ 
+    
+  }
+  50% {
+    font-size: 85px;   
+    
+  }
+  100% {
+    font-size: 100px;
+    color: white;
+    
+  }
+}
+
+
+   

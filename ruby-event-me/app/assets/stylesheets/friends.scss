@@ -24,7 +24,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	box-shadow: 7px 7px grey;
+	box-shadow: 7px 7px darkgrey;
 
 };
 
@@ -49,13 +49,23 @@
 	positon: absolute;
 }
 
+#bday-container {
+	width: 28vw;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+
 .bday-controller {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	align-items: center;
 	text-align: center;
-	
+	margin: 0 auto;
 }
 
 .card-title a {
@@ -72,8 +82,8 @@
 }
 
 #bday-highlight {
-	font-size: 18px;
-	color: gold;
+	font-size: 17px;
+	color: white;
 }
 
 .friend-container {
@@ -84,6 +94,8 @@
 
 .time {
 	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .show {
@@ -170,4 +182,16 @@ button {
 	font-size: 42px;
 }
 
+.material-icons.add {
+	font-size: 42px;
+	color: #F0B27A;
+	float: right;
+	margin-right: 9%;
+	margin-top: -1%;
+	margin-bottom: 1%;
+}
+
+.show-highlight {
+	font-size: 18px;
+}
 

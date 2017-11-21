@@ -2,6 +2,12 @@
     <div class="show-friend-info">
         <div class="show-card-title">
             <h2 id="name"><%= @friend.name %></h2>
+
+            <% now = Time.now %>
+    <% if [now.month, now.day] == [@friend.dob.month, @friend.dob.day] %> 
+        <p class="show-highlight">&#127880;  Don't forget to wish them a very happy birthday &#127880; </p>
+        <% end %>
+        
             <h4><%= @friend.dob %></h4>
             <p><%= @friend.notes %></p>
             <% @inspos.each do |inspo| %>

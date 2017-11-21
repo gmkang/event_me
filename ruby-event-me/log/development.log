@@ -17005,3 +17005,736 @@ Processing by FriendsController#new as HTML
 Completed 200 OK in 260ms (Views: 229.5ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:59:17 -0500
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (12.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 1413ms (Views: 1294.5ms | ActiveRecord: 52.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 21:59:29 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.9ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 335ms (Views: 229.3ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/friends/36" for 127.0.0.1 at 2017-11-20 21:59:34 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (23.2ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 36]]
+  Rendered friends/show.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 321ms (Views: 252.2ms | ActiveRecord: 39.9ms)
+
+
+Started DELETE "/friends/36" for 127.0.0.1 at 2017-11-20 21:59:36 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3C31C9n586xXEr4qM5vyGCJpxNkbG1vaAzWdKtTyDjB0cJMY74floGtLrNJpYNXa3Czs/v2aRfijP1WZ8Z5uwA==", "id"=>"36"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (14.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.2ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 36]]
+  [1m[35mSQL (28.6ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 36]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 94ms (ActiveRecord: 49.1ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 21:59:36 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 69ms (Views: 63.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/friends/37" for 127.0.0.1 at 2017-11-20 21:59:38 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (2.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 37]]
+  Rendered friends/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 86ms (Views: 62.0ms | ActiveRecord: 15.5ms)
+
+
+Started DELETE "/friends/37" for 127.0.0.1 at 2017-11-20 21:59:40 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t6skZIBsUyMAtiI939MZVJQtCavkbSug790kkEzEzG1sDuQDmKaOCbdQhPdUa0RWfjPPzpfcZcqkxT5YcT92eQ==", "id"=>"37"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 37]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 37]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 32ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 21:59:40 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 90ms (Views: 84.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2017-11-20 22:00:40 -0500
+Processing by FriendsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/new.html.erb within layouts/application
+  Rendered shared/_friend_form.html.erb (83.9ms)
+  Rendered friends/new.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 501ms (Views: 442.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2017-11-20 22:00:49 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jY4zjjw0Q7kD5UWWHx5zG4cYGMD7JlXOMydHkzjKQRDT2tjufL/Sb9YhMN1tf23uXoBBNZdcuUVTS0moDwZLw==", "friend"=>{"name"=>"bob", "dob"=>"november 20, 2017", "notes"=>"hi"}, "commit"=>"Create Friend"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (11.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (44.6ms)[0m  [1m[32mINSERT INTO "friends" ("name", "dob", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "bob"], ["dob", "2017-11-20"], ["notes", "hi"], ["created_at", "2017-11-21 03:00:49.108469"], ["updated_at", "2017-11-21 03:00:49.108469"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends/38
+Completed 302 Found in 101ms (ActiveRecord: 64.7ms)
+
+
+Started GET "/friends/38" for 127.0.0.1 at 2017-11-20 22:00:49 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (6.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.5ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 38]]
+  Rendered friends/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 142ms (Views: 126.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:00:51 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 182ms (Views: 142.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:07:59 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 2883ms (Views: 2859.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:09:23 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 308ms (Views: 270.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:11:04 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (5.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  Rendered friends/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 2972ms (Views: 2919.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:12:04 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.9ms)
+
+
+  
+ArgumentError (Direction "month" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/friends_controller.rb:8:in `index'
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:12:18 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (93.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends" ORDER BY "friends"."dob" ASC[0m
+  Rendered friends/index.html.erb within layouts/application (131.9ms)
+Completed 200 OK in 361ms (Views: 206.1ms | ActiveRecord: 94.4ms)
+
+
+Started GET "/inspos" for 127.0.0.1 at 2017-11-20 22:12:24 -0500
+Processing by InsposController#index as HTML
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering inspos/index.html.erb within layouts/application
+  [1m[36mInspo Load (7.0ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos"[0m
+  Rendered inspos/index.html.erb within layouts/application (278.1ms)
+Completed 200 OK in 451ms (Views: 166.9ms | ActiveRecord: 263.5ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-20 22:12:30 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 207ms (Views: 182.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 22:12:32 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (1.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends" ORDER BY "friends"."dob" ASC[0m
+  Rendered friends/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 170ms (Views: 155.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:15:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (77.2ms)
+Completed 200 OK in 312ms (Views: 285.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:17:06 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 3204ms (Views: 3193.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:17:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 2673ms (Views: 2667.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:18:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 2999ms (Views: 2986.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:18:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 2874ms (Views: 2840.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:19:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 2829ms (Views: 2823.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:22:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 292ms (Views: 276.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:25:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 3346ms (Views: 3333.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:25:28 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 2397ms (Views: 2390.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:27:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 2930ms (Views: 2902.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:28:07 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 2830ms (Views: 2810.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:29:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 268ms (Views: 252.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:30:14 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 3086ms (Views: 3072.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:31:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 3834ms (Views: 3812.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:31:25 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 3575ms (Views: 3543.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:31:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 2559ms (Views: 2547.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:31:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 2141ms (Views: 2138.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:34:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "}": expected selector or at-rule, was "}"):
+    4:     <title>EventMe</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.scss:232
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1378370913155589934_70123548479500'
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:36:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 2703ms (Views: 2691.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:39:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.5ms)
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "    color: ": expected expression (e.g. 1px, bold), was "##E3AE43;"):
+    4:     <title>EventMe</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.scss:223
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1378370913155589934_70123599333040'
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:39:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 3063ms (Views: 3043.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:39:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 3173ms (Views: 3151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:40:12 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 3101ms (Views: 3095.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:55:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (80.3ms)
+Completed 200 OK in 5285ms (Views: 5240.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:55:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 3429ms (Views: 3393.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:56:23 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 3468ms (Views: 3451.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:56:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 3337ms (Views: 3326.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:57:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 3310ms (Views: 3294.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:59:12 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 4081ms (Views: 4063.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 22:59:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (149.5ms)
+Completed 200 OK in 4720ms (Views: 4699.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 23:00:12 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 3469ms (Views: 3448.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 23:00:28 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 3837ms (Views: 3813.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 23:00:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 3743ms (Views: 3721.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 23:01:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 2984ms (Views: 2969.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-20 23:04:10 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 3662ms (Views: 3637.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 23:04:45 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (45.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (97.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" ORDER BY "friends"."dob" ASC[0m
+  Rendered friends/index.html.erb within layouts/application (161.6ms)
+Completed 200 OK in 764ms (Views: 512.8ms | ActiveRecord: 142.3ms)
+
+
+Started GET "/friends/38" for 127.0.0.1 at 2017-11-20 23:04:52 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mUser Load (29.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (73.5ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (39.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 38]]
+  Rendered friends/show.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 412ms (Views: 192.0ms | ActiveRecord: 141.9ms)
+
+
+Started DELETE "/friends/38" for 127.0.0.1 at 2017-11-20 23:04:57 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ESnfdAqk+qRoSUzLthxvorB/hmvkDbXB0ByfqqFi2PPFm5iKL4f5/qvroc3jT+v9QwEYP2c6Av/zdKgK5R5oQQ==", "id"=>"38"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.8ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[35m (56.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInspo Load (22.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 38]]
+  [1m[35mSQL (89.6ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 38]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 213ms (ActiveRecord: 177.1ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 23:04:58 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (12.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" ORDER BY "friends"."dob" ASC[0m
+  Rendered friends/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 197ms (Views: 178.4ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:05:24 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (23.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 2860ms (Views: 2807.4ms | ActiveRecord: 35.9ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:05:27 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (18.9ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 95ms (Views: 64.3ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:05:30 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 74ms (Views: 60.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:05:37 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:06:24 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (4.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (0.8ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 3201ms (Views: 3118.8ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2017-11-20 23:06:33 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (13.0ms)[0m  [1m[34mSELECT "friends".* FROM "friends" ORDER BY "friends"."dob" ASC[0m
+  Rendered friends/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 90ms (Views: 62.6ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:06:40 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (8.0ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (11.6ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 159ms (Views: 129.7ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/friends/26" for 127.0.0.1 at 2017-11-20 23:21:48 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (61.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT  "friends".* FROM "friends" WHERE "friends"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering friends/show.html.erb within layouts/application
+  [1m[36mInspo Load (10.4ms)[0m  [1m[34mSELECT "inspos".* FROM "inspos" WHERE "inspos"."friend_id" = $1[0m  [["friend_id", 26]]
+  Rendered friends/show.html.erb within layouts/application (144.5ms)
+Completed 200 OK in 946ms (Views: 395.1ms | ActiveRecord: 231.9ms)
+
+
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-20 23:22:01 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 378ms (Views: 324.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:22:10 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1635ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:17:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:28:30 -0500
+  [1m[35m (12.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1128ms (ActiveRecord: 22.2ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:28:50 -0500
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:29:01 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1668ms (ActiveRecord: 11.0ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1009ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:31:50 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1107ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:36:18 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKMQe4ITY7XJy463jcME3M2wk0A/QYjZQGtBrvBu8EqWb7Mi21I1ZzBrrlXJEnK20iE2aDszgHQ6yDO0JlTAzw==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (109.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30297ms (ActiveRecord: 109.4ms)
+
+
+  
+SocketError (Failed to open TCP connection to api.unsplash.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/controllers/inspos_controller.rb:16:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:37:40 -0500
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z6zStruFG6s2PePw3rtuZhWx9wzq6Mp8KLobkngtWQ5u1YEbOoc17G1q8iXzcuodwteWaz9ZIc4FO6uqlPJpJQ==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30147ms (ActiveRecord: 39.3ms)
+
+
+  
+SocketError (Failed to open TCP connection to api.unsplash.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/controllers/inspos_controller.rb:16:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:38:45 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z6zStruFG6s2PePw3rtuZhWx9wzq6Mp8KLobkngtWQ5u1YEbOoc17G1q8iXzcuodwteWaz9ZIc4FO6uqlPJpJQ==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30210ms (ActiveRecord: 1.4ms)
+
+
+  
+SocketError (Failed to open TCP connection to api.unsplash.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/controllers/inspos_controller.rb:16:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:40:56 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z6zStruFG6s2PePw3rtuZhWx9wzq6Mp8KLobkngtWQ5u1YEbOoc17G1q8iXzcuodwteWaz9ZIc4FO6uqlPJpJQ==", "search"=>{"term"=>"COOKIES"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7526ms (ActiveRecord: 0.7ms)
+
+
+  
+SocketError (Failed to open TCP connection to api.unsplash.com:443 (getaddrinfo: nodename nor servname provided, or not known)):
+  
+app/controllers/inspos_controller.rb:16:in `results'
+Started GET "/inspos/search" for 127.0.0.1 at 2017-11-20 23:41:20 -0500
+Processing by InsposController#search as HTML
+  [1m[36mUser Load (140.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering inspos/search.html.erb within layouts/application
+  Rendered inspos/search.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 2009ms (Views: 1836.8ms | ActiveRecord: 140.0ms)
+
+
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:41:27 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rlDNfbxSZU4K/l+MNT9wyAHfklkQSGOr1Raz1WOsGHQPKZ7QPVBLCVGpTlkY9vSz1rnzPsX5iBn4lwPtj3MoXw==", "search"=>{"term"=>"cake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1355ms (ActiveRecord: 9.4ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'
+Started POST "/inspos/search" for 127.0.0.1 at 2017-11-20 23:41:41 -0500
+Processing by InsposController#results as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rlDNfbxSZU4K/l+MNT9wyAHfklkQSGOr1Raz1WOsGHQPKZ7QPVBLCVGpTlkY9vSz1rnzPsX5iBn4lwPtj3MoXw==", "search"=>{"term"=>"cake"}, "commit"=>"Search Images"}
+  [1m[36mUser Load (48.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1572ms (ActiveRecord: 48.6ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/inspos_controller.rb:18:in `results'

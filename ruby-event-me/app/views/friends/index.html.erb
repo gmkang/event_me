@@ -1,14 +1,16 @@
 <h1 class="main_header"></h1><br>
 <p class="time"><%= Time.now.strftime("%B %d,%Y") %></p>
 
-<%= link_to new_friend_path, :class => "btn", "data-toggle" => "modal", "data-target" => "#myModal" do %><i class="material-icons add">add_circle</i><% end %>
+<%= link_to new_friend_path, "data-toggle" => "modal", "data-target" => "#myModal" do %><i class="material-icons add">add_circle</i><% end %>
 <div class="info-list">
 	
+	<% now = Time.now %>
+
 	<% @friends.each do |friend| %>
-	<% if Date.strptime('1991-01-13', '%Y-%m-%d') == friend.dob  %>
+	
+	<% if [now.month, now.day] == [friend.dob.month, friend.dob.day] %>
 
-
-	<div id="friend-container">
+	<div id="bday-container">
 	<div class="bday-controller">
 	<div class="birthday-info">
 
