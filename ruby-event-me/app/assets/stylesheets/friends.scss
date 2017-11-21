@@ -47,6 +47,8 @@
 	align-items: center;
 	text-align: center;
 	positon: absolute;
+	margin-left: -10%;
+	margin-top: -11%
 }
 
 #bday-container {
@@ -195,3 +197,17 @@ button {
 	font-size: 18px;
 }
 
+.edit-title {
+	font-family: 'Boogaloo', cursive;
+	margin: 0 auto;
+	font-size: 55px;
+	text-align: left;
+}
+
+.edit-container {
+	display: flex;
+	align-items: center;
+	width: 30vw;
+	height: 30vw;
+	margin: 0 auto;
+}

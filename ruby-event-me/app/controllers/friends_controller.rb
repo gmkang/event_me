@@ -5,7 +5,7 @@ class FriendsController < ApplicationController
 
 	def index
 		
-		@friends = Friend.order(dob: :asc)
+		@friends = Friend.order(dob: :desc)
 		
 	end
 
@@ -22,6 +22,7 @@ class FriendsController < ApplicationController
 
 		if @friend.valid?
 			@friend.save
+
 			redirect_to @friend
 		else
 			redirect_back fallback_location: new_friend_path

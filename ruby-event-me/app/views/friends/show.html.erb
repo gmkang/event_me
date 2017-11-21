@@ -20,7 +20,7 @@
         <div class="card-footer">
     
             <div class="footer-buttons">
-                <%= button_to "Edit", edit_friend_path(@friend, :class => "pop-button") %>
+                <%= link_to "Edit", edit_friend_path(@friend, :class => "pop-button") %>
                 <%= button_to "Remove", @friend, :method => :delete %>
                 </div>
             </div>
